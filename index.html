@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolarTech</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- header -->
+  <header>
+    <div class="container nav">
+
+      <div class="logo">
+        Solar<span>Tech</span>
+      </div>
+
+      <ul class="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#marketplace">Marketplace</a></li>
+      </ul>
+
+      <a href="#simulador" class="btn">
+        Simular agora
+      </a>
+
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero" id="inicio">
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <h1>
+          Descubra se energia solar vale a pena para sua casa
+        </h1>
+
+        <p>
+          Utilize seu histórico anual de energia para descobrir
+          economia, quantidade de placas solares, área necessária
+          e retorno estimado do investimento.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#simulador" class="btn">
+            Começar simulação
+          </a>
+
+          <a href="#como-funciona" class="btn-outline">
+            Saiba mais
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+          alt="Energia Solar"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- como funciona -->
+  <section class="section" id="como-funciona">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Como funciona
+      </h2>
+
+      <p class="section-subtitle">
+        A SolarTech utiliza o histórico anual da sua conta de energia
+        para entregar uma análise mais fiel da viabilidade da energia solar.
+      </p>
+
+      <div class="cards-grid">
+
+        <div class="card">
+          <h3>1. Informe suas contas</h3>
+
+          <p>
+            Digite os valores das suas contas de energia
+            dos últimos 12 meses.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>2. Escolha sua região</h3>
+
+          <p>
+            O sistema considera a eficiência solar média
+            da sua região do estado de São Paulo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>3. Receba a análise</h3>
+
+          <p>
+            Veja economia estimada, placas necessárias,
+            área necessária e retorno financeiro.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- simulador -->
+  <section class="section" id="simulador">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Simulador Solar Inteligente
+      </h2>
+
+      <p class="section-subtitle">
+        Informe o valor das suas contas de energia
+        dos últimos 12 meses.
+      </p>
+
+      <div class="simulator-box">
+
+        <!-- formulário -->
+        <div class="simulator-form">
+
+          <div class="months-grid">
+
+            <div class="form-group">
+              <label>Janeiro</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Fevereiro</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Março</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Abril</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Maio</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Junho</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Julho</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Agosto</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Setembro</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Outubro</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Novembro</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+            <div class="form-group">
+              <label>Dezembro</label>
+              <input type="number" class="contaMes" placeholder="R$">
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Selecione sua região</label>
+
+            <select id="regiao">
+
+              <option value="">
+                Escolha uma região
+              </option>
+
+              <option value="50">
+                São Paulo Capital (DDD 11)
+              </option>
+
+              <option value="55">
+                Sorocaba (DDD 15)
+              </option>
+
+              <option value="57">
+                Campinas (DDD 19)
+              </option>
+
+              <option value="60">
+                Ribeirão Preto (DDD 16)
+              </option>
+
+              <option value="54">
+                Santos (DDD 13)
+              </option>
+
+              <option value="56">
+                São José dos Campos (DDD 12)
+              </option>
+
+              <option value="53">
+                Bauru (DDD 14)
+              </option>
+
+              <option value="58">
+                São José do Rio Preto (DDD 17)
+              </option>
+
+              <option value="57">
+                Presidente Prudente (DDD 18)
+              </option>
+
+            </select>
+
+          </div>
+
+          <button class="btn btn-full" id="calcularBtn">
+            Calcular viabilidade
+          </button>
+
+        </div>
+
+        <!-- resultados -->
+        <div class="simulator-results">
+
+          <h3>
+            Resultado da simulação
+          </h3>
+
+          <div class="result-card">
+            <strong>Média mensal:</strong>
+            <span id="mediaResultado">--</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Consumo estimado:</strong>
+            <span id="consumoResultado">--</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Placas solares:</strong>
+            <span id="placasResultado">--</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Área necessária:</strong>
+            <span id="areaResultado">--</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Economia mensal:</strong>
+            <span id="economiaResultado">--</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Economia anual:</strong>
+            <span id="economiaAnualResultado">--</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Custo estimado:</strong>
+            <span id="custoResultado">--</span>
+          </div>
+
+          <div class="result-card">
+            <strong>Payback:</strong>
+            <span id="paybackResultado">--</span>
+          </div>
+
+          <div class="status-box" id="statusResultado">
+            Aguardando simulação...
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- marketplace -->
+  <section class="section" id="marketplace">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Produtos recomendados
+      </h2>
+
+      <p class="section-subtitle">
+        Equipamentos solares que podem ser utilizados
+        em instalações residenciais.
+      </p>
+
+      <div class="cards-grid">
+
+        <div class="product-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=800&q=80"
+            alt="Painel solar"
+          >
+
+          <h3>Painel Solar 550W</h3>
+
+          <p>
+            Alta eficiência energética para residências.
+          </p>
+
+          <a href="#" class="btn">
+            Comprar
+          </a>
+
+        </div>
+
+        <div class="product-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=800&q=80"
+            alt="Kit Solar"
+          >
+
+          <h3>Kit Solar Residencial</h3>
+
+          <p>
+            Solução completa para pequenos imóveis.
+          </p>
+
+          <a href="#" class="btn">
+            Comprar
+          </a>
+
+        </div>
+
+        <div class="product-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80"
+            alt="Inversor"
+          >
+
+          <h3>Inversor Solar</h3>
+
+          <p>
+            Equipamento essencial para sistemas fotovoltaicos.
+          </p>
+
+          <a href="#" class="btn">
+            Comprar
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

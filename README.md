@@ -11,12 +11,12 @@ Plataforma inteligente de simulação de viabilidade para energia solar residenc
 - Cálculo de payback
 - Marketplace de equipamentos solares
 
-##  Tecnologias
+## Tecnologias
 
 - HTML5
 - CSS3
 - JavaScript
 
-##  Objetivo
+## Objetivo
 
 Projeto acadêmico desenvolvido para a disciplina de UPX com foco em sustentabilidade, acessibilidade e análise de viabilidade da energia solar residencial.

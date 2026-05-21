@@ -4,51 +4,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     calcularBtn.addEventListener("click", function () {
 
-        // inputs
+      // seleciona as contas e kWhs //
         const contas = document.querySelectorAll(".conta");
         const kwhs = document.querySelectorAll(".kwh");
 
         // DDD
         const ddd = document.getElementById("ddd").value;
 
-        // variáveis para cálculos
+        // validação de DDD //
+
+        if (!ddd) {
+
+            alert("Selecione um DDD.");
+
+            return;
+        }
+
+        // variáveis para cálculos //
+
         let somaValor = 0;
         let somaKwh = 0;
         let mesesPreenchidos = 0;
 
-        // tarifa média para cálculo de kWh quando não informado (R$ 0,95 por kWh)
+        // tarifa média
         const tarifa = 0.95;
 
-        // LOOP
+     // loop para somar valores e kWh //
+
         contas.forEach((conta, index) => {
 
             const valor = parseFloat(conta.value);
             const kwh = parseFloat(kwhs[index].value);
 
-            // soma valores informados
+            // soma valores
             if (!isNaN(valor) && valor > 0) {
+
                 somaValor += valor;
             }
 
-            // usa kWh informado ou calcula a partir do valor e tarifa
+            // usa kWh informado
             if (!isNaN(kwh) && kwh > 0) {
 
                 somaKwh += kwh;
-                mesesPreenchidos++;
 
+                mesesPreenchidos++;
             }
 
-            // se não informou kWh, mas informou valor, calcula o kWh a partir do valor e tarifa
+            // calcula kWh automaticamente
             else if (!isNaN(valor) && valor > 0) {
 
                 somaKwh += valor / tarifa;
-                mesesPreenchidos++;
 
+                mesesPreenchidos++;
             }
 
         });
 
-        // valida se o usuário preencheu pelo menos uma conta
+        // validação de preenchimento //
+
         if (mesesPreenchidos === 0) {
 
             alert("Preencha pelo menos uma conta.");
@@ -56,74 +69,93 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // média mensal
+       // média mensal //
         const mediaMensal = somaValor / mesesPreenchidos;
 
-        // consumo médio mensal em kWh
+       // consumo médio mensal //
+
         const consumo = somaKwh / mesesPreenchidos;
 
-        // geração regional média por placa (kWh/mês) - valores aproximados para o estado de São Paulo
-        let geracaoRegional = 35;
+        // geração regional // 
+
+        let geracaoRegional = 55;
 
         if (ddd === "11") {
-            geracaoRegional = 35;
+
+            geracaoRegional = 55;
         }
 
         else if (ddd === "12") {
-            geracaoRegional = 36;
+
+            geracaoRegional = 56;
         }
 
         else if (ddd === "13") {
-            geracaoRegional = 35;
+
+            geracaoRegional = 57;
         }
 
         else if (ddd === "14") {
-            geracaoRegional = 34;
+
+            geracaoRegional = 54;
         }
 
         else if (ddd === "15") {
-            geracaoRegional = 34;
+
+            geracaoRegional = 55;
         }
 
         else if (ddd === "16") {
-            geracaoRegional = 36;
+
+            geracaoRegional = 56;
         }
 
         else if (ddd === "17") {
-            geracaoRegional = 35;
+
+            geracaoRegional = 55;
         }
 
         else if (ddd === "18") {
-            geracaoRegional = 34;
+
+            geracaoRegional = 54;
         }
 
         else if (ddd === "19") {
-            geracaoRegional = 36;
+
+            geracaoRegional = 56;
         }
 
-        // placas necessárias
+        // quantidade de placas //
+
         const placas = Math.ceil(consumo / geracaoRegional);
 
-        // área necessária (considerando 2 m² por placa)
-        const area = placas * 2;
+       // área necessária //
 
-        // economia mensal (considerando que o sistema gera 90% do consumo)
-        const economiaMensal = mediaMensal * 0.9;
+        const area = placas * 2.3;
+
+       // economia mensal // 
+        const economiaMensal = mediaMensal * 0.75;
 
         const economiaAnual = economiaMensal * 12;
 
-        // custo do sistema (considerando R$ 2500 por placa)
-        const custoSistema = placas * 2500;
+        // custo do sistema //
+        const custoSistema = placas * 1500;
 
-        // PAYBACK
-        const paybackMeses = custoSistema / economiaMensal;
+        // payback //
+        let paybackMeses = 0;
+
+        if (economiaMensal > 0) {
+
+            paybackMeses = custoSistema / economiaMensal;
+        }
 
         const anos = Math.floor(paybackMeses / 12);
 
         const meses = Math.round(paybackMeses % 12);
 
-        // resultados
-        document.getElementById("mediaConta").textContent =
+        // resultados //
+
+        document.getElementById("mediaConta").textContent 
             `R$ ${mediaMensal.toFixed(2)}`;
 
         document.getElementById("consumoMedio").textContent =
@@ -133,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `${placas} placas`;
 
         document.getElementById("area").textContent =
-            `${area} m²`;
+            `${area.toFixed(1)} m²`;
 
         document.getElementById("economiaMensal").textContent =
             `R$ ${economiaMensal.toFixed(2)}`;

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SolarTech</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="container nav">
+
+            <div class="logo">
+                Solar<span>Tech</span>
+            </div>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#simulador">Simulador</a></li>
+                    <li><a href="#marketplace">Marketplace</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    Descubra se energia solar vale a pena para sua casa
+                </h1>
+
+                <p>
+                    Simule consumo, economia, quantidade de placas solares
+                    e retorno do investimento de forma simples, rápida e acessível.
+                </p>
+
+                <a href="#simulador" class="btn">
+                    Fazer simulação
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+                    alt="Energia Solar">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Por que usar a SolarTech?</h2>
+
+                <p>
+                    Tecnologia e sustentabilidade para ajudar você
+                    a entender se energia solar realmente vale a pena.
+                </p>
+
+            </div>
+
+            <div class="sobre-grid">
+
+                <div class="sobre-card">
+                    <h3>☀️ Economia</h3>
+
+                    <p>
+                        Reduza em até 90% os custos com energia elétrica.
+                    </p>
+                </div>
+
+                <div class="sobre-card">
+                    <h3>🌎 Sustentabilidade</h3>
+
+                    <p>
+                        Incentive o uso de energia limpa e renovável.
+                    </p>
+                </div>
+
+                <div class="sobre-card">
+                    <h3>📊 Simulação Inteligente</h3>
+
+                    <p>
+                        Cálculos realizados com base no histórico anual da conta.
+                    </p>
+                </div>
+
+                <div class="sobre-card">
+                    <h3>📱 Plataforma Responsiva</h3>
+
+                    <p>
+                        Utilize em celulares, tablets e computadores.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="simulador" id="simulador">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Simulador Solar</h2>
+
+                <p>
+                    Informe o histórico das suas contas de energia
+                    e descubra se energia solar vale a pena para sua residência.
+                </p>
+
+            </div>
+
+            <!-- DDD -->
+            <div class="form-group">
+
+                <label>Digite o DDD da sua região</label>
+
+                <input
+                    type="number"
+                    id="ddd"
+                    placeholder="Ex: 11, 15, 19">
+
+                <small>
+                    Utilizamos o DDD para estimar a geração solar da sua região.
+                </small>
+
+            </div>
+
+            <!-- CONTAS -->
+            <div class="contas-grid">
+
+                <div class="mes-box">
+                    <label>Janeiro</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Fevereiro</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Março</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Abril</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Maio</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Junho</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Julho</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Agosto</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Setembro</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Outubro</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Novembro</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+                <div class="mes-box">
+                    <label>Dezembro</label>
+                    <input type="number" class="conta" placeholder="Valor da conta (R$)">
+                    <input type="number" class="kwh" placeholder="Consumo (kWh)">
+                </div>
+
+            </div>
+
+            <button id="calcularBtn" class="btn">
+                Calcular Simulação
+            </button>
+
+            <!-- RESULTADOS -->
+            <div class="resultado-box">
+
+                <h3>Resultado da Simulação</h3>
+
+                <div class="resultado-item">
+                    <strong>Média da conta:</strong>
+                    <span id="mediaConta">--</span>
+                </div>
+
+                <div class="resultado-item">
+                    <strong>Consumo médio:</strong>
+                    <span id="consumoMedio">--</span>
+                </div>
+
+                <div class="resultado-item">
+                    <strong>Quantidade de placas:</strong>
+                    <span id="placas">--</span>
+                </div>
+
+                <div class="resultado-item">
+                    <strong>Área necessária:</strong>
+                    <span id="area">--</span>
+                </div>
+
+                <div class="resultado-item">
+                    <strong>Economia mensal:</strong>
+                    <span id="economiaMensal">--</span>
+                </div>
+
+                <div class="resultado-item">
+                    <strong>Economia anual:</strong>
+                    <span id="economiaAnual">--</span>
+                </div>
+
+                <div class="resultado-item">
+                    <strong>Custo estimado:</strong>
+                    <span id="custoSistema">--</span>
+                </div>
+
+                <div class="resultado-item">
+                    <strong>Payback:</strong>
+                    <span id="payback">--</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section class="marketplace" id="marketplace">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Marketplace Solar</h2>
+
+                <p>
+                    Conheça equipamentos e soluções para começar sua transição para energia solar.
+                </p>
+
+            </div>
+
+            <div class="market-grid">
+
+                <!-- CARD -->
+                <div class="market-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1200&q=80"
+                        alt="Kit Solar">
+
+                    <div class="market-info">
+
+                        <span class="tag">
+                            Mais vendido
+                        </span>
+
+                        <h3>Kit Solar 550W</h3>
+
+                        <p>
+                            Ideal para residências pequenas e médias.
+                        </p>
+
+                        <ul>
+                            <li> Potência: 550W</li>
+                            <li> Alta eficiência</li>
+                            <li> Economia de até 90%</li>
+                        </ul>
+
+                        <div class="preco">
+                            R$ 2.499
+                        </div>
+
+                        <a href="#" class="btn">
+                            Ver produto
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="market-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80"
+                        alt="Painel Solar">
+
+                    <div class="market-info">
+
+                        <span class="tag">
+                            Sustentável
+                        </span>
+
+                        <h3>Painel Solar Premium</h3>
+
+                        <p>
+                            Tecnologia avançada para maior geração energética.
+                        </p>
+
+                        <ul>
+                            <li> Potência: 600W</li>
+                            <li> Alta durabilidade</li>
+                            <li>Energia limpa</li>
+                        </ul>
+
+                        <div class="preco">
+                            R$ 3.199
+                        </div>
+
+                        <a href="#" class="btn">
+                            Ver produto
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="market-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80"
+                        alt="Inversor Solar">
+
+                    <div class="market-info">
+
+                        <span class="tag">
+                            Tecnologia
+                        </span>
+
+                        <h3>Inversor Solar Inteligente</h3>
+
+                        <p>
+                            Controle e monitoramento eficiente da geração solar.
+                        </p>
+
+                        <ul>
+                            <li> Monitoramento online</li>
+                            <li> Alta performance</li>
+                            <li> Maior eficiência</li>
+                        </ul>
+
+                        <div class="preco">
+                            R$ 1.899
+                        </div>
+
+                        <a href="#" class="btn">
+                            Ver produto
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 SolarTech — Projeto Acadêmico UPX
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

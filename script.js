@@ -1,16 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // botão calcular
-
+    // ELEMENTOS
     const calcularBtn =
         document.getElementById("calcularBtn");
 
-    // resultado
-
     const resultadoBox =
         document.getElementById("resultadoBox");
-
-    // inputs
 
     const contas =
         document.querySelectorAll(".conta");
@@ -18,257 +13,151 @@ document.addEventListener("DOMContentLoaded", function () {
     const kwhs =
         document.querySelectorAll(".kwh");
 
-    // ddd
-
     const dddSelect =
         document.getElementById("ddd");
 
-    // gráfico
-
+    // GRÁFICO
     const ctx =
         document.getElementById("graficoConsumo");
 
-    // criar gráfico
+    let grafico = new Chart(ctx, {
 
-    const grafico =
-        new Chart(ctx, {
+        type: "line",
 
-            type: "line",
+        data: {
 
-            data: {
+            labels: [
 
-                labels: [
+                "Jan",
+                "Fev",
+                "Mar",
+                "Abr",
+                "Mai",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Set",
+                "Out",
+                "Nov",
+                "Dez"
 
-                    "Jan",
-                    "Fev",
-                    "Mar",
-                    "Abr",
-                    "Mai",
-                    "Jun",
-                    "Jul",
-                    "Ago",
-                    "Set",
-                    "Out",
-                    "Nov",
-                    "Dez"
+            ],
 
-                ],
+            datasets: [
 
-                datasets: [
+                {
 
-                    // consumo
+                    label: "Consumo (kWh)",
 
-                    {
+                    data: [],
 
-                        label: "Consumo (kWh)",
+                    borderColor: "#f4b400",
 
-                        data: [],
+                    backgroundColor:
+                        "rgba(244,180,0,0.12)",
 
-                        borderColor: "#f4b400",
+                    borderWidth: 3,
 
-                        backgroundColor:
-                            "rgba(244,180,0,0.12)",
+                    tension: 0.4,
 
-                        borderWidth: 3,
+                    fill: true,
 
-                        tension: 0.4,
+                    pointRadius: 4,
 
-                        fill: true,
+                    pointBackgroundColor:
+                        "#f4b400",
 
-                        pointRadius: 4,
+                    yAxisID: "y"
 
-                        pointBackgroundColor:
-                            "#f4b400",
+                },
 
-                        yAxisID: "y"
+                {
 
-                    },
+                    label: "Sistema Ideal",
 
-                    // sistema ideal
+                    data: [],
 
-                    {
+                    borderColor: "#ffffff",
 
-                        label: "Sistema Ideal",
+                    borderWidth: 2,
 
-                        data: [],
+                    borderDash: [8, 6],
 
-                        borderColor: "#ffffff",
+                    tension: 0.3,
 
-                        borderWidth: 2,
+                    fill: false,
 
-                        borderDash: [8, 6],
+                    pointRadius: 0,
 
-                        tension: 0.3,
+                    yAxisID: "y"
 
-                        fill: false,
+                },
 
-                        pointRadius: 0,
+                {
 
-                        yAxisID: "y"
+                    label: "Valor da Conta (R$)",
 
-                    },
+                    data: [],
 
-                    // valor conta
+                    borderColor: "#38bdf8",
 
-                    {
+                    backgroundColor:
+                        "rgba(56,189,248,0.10)",
 
-                        label: "Valor da Conta (R$)",
+                    borderWidth: 3,
 
-                        data: [],
+                    tension: 0.4,
 
-                        borderColor: "#38bdf8",
+                    fill: false,
 
-                        backgroundColor:
-                            "rgba(56,189,248,0.10)",
+                    pointRadius: 4,
 
-                        borderWidth: 3,
+                    pointBackgroundColor:
+                        "#38bdf8",
 
-                        tension: 0.4,
+                    yAxisID: "y1"
 
-                        fill: false,
+                }
 
-                        pointRadius: 4,
+            ]
 
-                        pointBackgroundColor:
-                            "#38bdf8",
+        },
 
-                        yAxisID: "y1"
+        options: {
 
-                    }
+            responsive: true,
 
-                ]
+            maintainAspectRatio: false,
+
+            interaction: {
+
+                mode: "index",
+
+                intersect: false
 
             },
 
-            options: {
+            plugins: {
 
-                responsive: true,
+                legend: {
 
-                maintainAspectRatio: false,
+                    position: "top",
 
-                interaction: {
+                    labels: {
 
-                    mode: "index",
+                        color: "#ffffff",
 
-                    intersect: false
+                        usePointStyle: true,
 
-                },
+                        padding: 24,
 
-                plugins: {
+                        font: {
 
-                    legend: {
+                            family: "Inter",
 
-                        position: "top",
+                            size: 13,
 
-                        labels: {
-
-                            color: "#ffffff",
-
-                            usePointStyle: true,
-
-                            padding: 24,
-
-                            font: {
-
-                                family: "Inter",
-
-                                size: 13,
-
-                                weight: "600"
-
-                            }
-
-                        }
-
-                    }
-
-                },
-
-                scales: {
-
-                    // eixo x
-
-                    x: {
-
-                        ticks: {
-
-                            color: "#d1d5db"
-
-                        },
-
-                        grid: {
-
-                            color:
-                                "rgba(255,255,255,0.05)"
-
-                        }
-
-                    },
-
-                    // eixo consumo
-
-                    y: {
-
-                        type: "linear",
-
-                        position: "left",
-
-                        beginAtZero: true,
-
-                        ticks: {
-
-                            color: "#f4b400"
-
-                        },
-
-                        grid: {
-
-                            color:
-                                "rgba(255,255,255,0.05)"
-
-                        },
-
-                        title: {
-
-                            display: true,
-
-                            text: "Consumo (kWh)",
-
-                            color: "#f4b400"
-
-                        }
-
-                    },
-
-                    // eixo valor
-
-                    y1: {
-
-                        type: "linear",
-
-                        position: "right",
-
-                        beginAtZero: true,
-
-                        ticks: {
-
-                            color: "#38bdf8"
-
-                        },
-
-                        grid: {
-
-                            drawOnChartArea: false
-
-                        },
-
-                        title: {
-
-                            display: true,
-
-                            text: "Valor da Conta (R$)",
-
-                            color: "#38bdf8"
+                            weight: "600"
 
                         }
 
@@ -276,15 +165,103 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+            },
+
+            scales: {
+
+                x: {
+
+                    ticks: {
+
+                        color: "#d1d5db"
+
+                    },
+
+                    grid: {
+
+                        color:
+                            "rgba(255,255,255,0.05)"
+
+                    }
+
+                },
+
+                y: {
+
+                    type: "linear",
+
+                    position: "left",
+
+                    beginAtZero: true,
+
+                    ticks: {
+
+                        color: "#f4b400"
+
+                    },
+
+                    grid: {
+
+                        color:
+                            "rgba(255,255,255,0.05)"
+
+                    },
+
+                    title: {
+
+                        display: true,
+
+                        text: "Consumo (kWh)",
+
+                        color: "#f4b400"
+
+                    }
+
+                },
+
+                y1: {
+
+                    type: "linear",
+
+                    position: "right",
+
+                    beginAtZero: true,
+
+                    ticks: {
+
+                        color: "#38bdf8"
+
+                    },
+
+                    grid: {
+
+                        drawOnChartArea: false
+
+                    },
+
+                    title: {
+
+                        display: true,
+
+                        text: "Valor da Conta (R$)",
+
+                        color: "#38bdf8"
+
+                    }
+
+                }
+
             }
 
-        });
+        }
 
-    // função principal
+    });
+
+    // =================================================
+    // FUNÇÃO PRINCIPAL
+    // =================================================
 
     function calcularSimulacao() {
-
-        // variáveis
 
         let somaValor = 0;
 
@@ -297,16 +274,13 @@ document.addEventListener("DOMContentLoaded", function () {
         let valoresMensais = [];
 
         // tarifa média
-
         const tarifa = 0.95;
 
-        // ddd
-
+        // região
         const ddd =
             dddSelect.value;
 
-        // loop inputs
-
+        // LEITURA DOS INPUTS
         contas.forEach((conta, index) => {
 
             const valor =
@@ -315,8 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const kwh =
                 parseFloat(kwhs[index].value);
 
-            // valor conta
-
+            // VALORES
             if (!isNaN(valor) && valor > 0) {
 
                 somaValor += valor;
@@ -331,8 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-            // consumo kwh
-
+            // KWH
             if (!isNaN(kwh) && kwh > 0) {
 
                 somaKwh += kwh;
@@ -342,8 +314,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 mesesPreenchidos++;
 
             }
-
-            // calcular consumo pela tarifa
 
             else if (!isNaN(valor) && valor > 0) {
 
@@ -366,8 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        // validar preenchimento
-
+        // VALIDAÇÃO
         if (mesesPreenchidos === 0) {
 
             resultadoBox.style.display =
@@ -382,105 +351,80 @@ document.addEventListener("DOMContentLoaded", function () {
             grafico.update();
 
             return;
-
         }
 
-        // média mensal
-
+        // MÉDIAS
         const mediaMensal =
             somaValor / mesesPreenchidos;
-
-        // consumo médio
 
         const consumo =
             somaKwh / mesesPreenchidos;
 
-        // geração regional
-
+        // GERAÇÃO REGIONAL
         let geracaoRegional = 55;
 
         if (ddd === "11") {
 
             geracaoRegional = 55;
-
         }
 
         else if (ddd === "12") {
 
             geracaoRegional = 56;
-
         }
 
         else if (ddd === "13") {
 
             geracaoRegional = 57;
-
         }
 
         else if (ddd === "14") {
 
             geracaoRegional = 54;
-
         }
 
         else if (ddd === "15") {
 
             geracaoRegional = 55;
-
         }
 
         else if (ddd === "16") {
 
             geracaoRegional = 56;
-
         }
 
         else if (ddd === "17") {
 
             geracaoRegional = 55;
-
         }
 
         else if (ddd === "18") {
 
             geracaoRegional = 54;
-
         }
 
         else if (ddd === "19") {
 
             geracaoRegional = 56;
-
         }
 
-        // placas
-
+        // CÁLCULOS
         const placas =
             Math.ceil(
                 consumo / geracaoRegional
             );
 
-        // área
-
         const area =
             placas * 2;
-
-        // economia mensal
 
         const economiaMensal =
             mediaMensal * 0.9;
 
-        // economia anual
-
         const economiaAnual =
             economiaMensal * 12;
 
-        // custo sistema
-
         const custoSistema =
             placas * 2500;
-
-        // payback
 
         const paybackMeses =
             custoSistema / economiaMensal;
@@ -491,26 +435,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const meses =
             Math.round(paybackMeses % 12);
 
-        // formatar moeda
+        // FORMATAÇÃO BR
+        const formatarMoeda = (valor) => {
 
-        const formatarMoeda =
-            (valor) => {
+            return valor.toLocaleString(
+                "pt-BR",
+                {
 
-                return valor.toLocaleString(
-                    "pt-BR",
-                    {
+                    minimumFractionDigits: 2,
 
-                        minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
 
-                        maximumFractionDigits: 2
+                }
+            );
 
-                    }
-                );
+        };
 
-            };
-
-        // resultados
-
+        // RESULTADOS
         document.getElementById("mediaConta")
             .textContent =
             `R$ ${formatarMoeda(mediaMensal)}`;
@@ -527,18 +468,31 @@ document.addEventListener("DOMContentLoaded", function () {
             .textContent =
             `${area} m²`;
 
-        // mostrar resultados
+        document.getElementById("economiaMensal")
+            .textContent =
+            `R$ ${formatarMoeda(economiaMensal)}`;
 
+        document.getElementById("economiaAnual")
+            .textContent =
+            `R$ ${formatarMoeda(economiaAnual)}`;
+
+        document.getElementById("custoSistema")
+            .textContent =
+            `R$ ${formatarMoeda(custoSistema)}`;
+
+        document.getElementById("payback")
+            .textContent =
+            `${anos} anos e ${meses} meses`;
+
+        // MOSTRAR RESULTADOS
         resultadoBox.style.display =
             "block";
 
-        // linha sistema ideal
-
+        // LINHA SISTEMA IDEAL
         const sistemaIdeal =
             Array(12).fill(consumo);
 
-        // atualizar gráfico
-
+        // ATUALIZA GRÁFICO
         grafico.data.datasets[0].data =
             consumoMensal;
 
@@ -552,15 +506,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // botão calcular
-
+    // BOTÃO
     calcularBtn.addEventListener(
         "click",
         calcularSimulacao
     );
 
-    // atualização dinâmica inputs conta
-
+    // INPUTS DINÂMICOS
     contas.forEach((input) => {
 
         input.addEventListener(
@@ -570,8 +522,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // atualização dinâmica inputs kwh
-
     kwhs.forEach((input) => {
 
         input.addEventListener(
@@ -580,8 +530,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     });
-
-    // atualização dinâmica ddd
 
     dddSelect.addEventListener(
         "change",
